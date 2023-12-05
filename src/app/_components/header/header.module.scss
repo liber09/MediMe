@@ -22,13 +22,36 @@
 
 .iconAndMenuContainer{
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "Logo Menu Menu Menu Menu";
-    justify-content: center; 
-    align-items: center; 
+      "logo menu menu menu menu";
   }
-  .Logo { grid-area: Logo; }
-  .Menu { grid-area: Menu; } 
+  .logo { 
+    grid-area: logo;
+    background-color: $white;
+
+ }
+  .menu { 
+    grid-area: menu; 
+    background-color: $blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} 
+
+.user{
+    height: 60px;
+    width: 60px;
+}
+
+.chat{
+    height: 60px;
+    width: 60px;
+}
+
+.hamburger{
+    height: 60px;
+    width: 60px;
+}
