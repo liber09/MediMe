@@ -1,0 +1,28 @@
+@import '/src/app/styles/variables.scss';
+
+.searchContainer{
+    background-color: $red;
+    height: 4em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.searchField{
+    width: 90%;
+    border-radius: 5px;
+    border: 0;
+    font-size: 2em;
+}
+
+.searchIcon{
+    position: absolute;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: url('https://res.cloudinary.com/dubvtauu4/image/upload/Search_sepg8z.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+}

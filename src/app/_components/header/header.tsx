@@ -1,4 +1,3 @@
-"use client";
 import styles from './header.module.scss';
 import Image from 'next/image';
 import ImageHandler from '@/app/_functions/imageHandler';
