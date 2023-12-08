@@ -6,16 +6,19 @@ export default function Search() {
     return ( 
         <>
             <div className={styles.searchContainer}>
-                <input className={styles.searchField} type="search" 
+                <input 
+                    className={styles.searchField} 
+                    type="text"
+                    placeholder="Sök..." 
                 />
-                <button className={styles.searchIcon}>
+                <div className={styles.searchIcon}>
                     <Image 
                         src={ImageHandler("Search_sepg8z").toURL()} 
                         alt="MediMe logo" 
                         height={20} 
                         width={20}>
                     </Image>
-                </button>
+                </div>
                 
             </div>
         </>
