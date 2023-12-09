@@ -1,3 +1,4 @@
+"use client"
 import styles from './header.module.scss';
 import React from "react"
 import Image from 'next/image';
