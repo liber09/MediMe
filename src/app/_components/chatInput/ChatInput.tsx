@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 
 interface ChatInputProps {
@@ -12,9 +13,10 @@ const ChatInput: React.FC<ChatInputProps> = ({ sendMessage }) => {
   };
 
   const handleSendMessage = () => {
+    console.log('Sending message:', text); 
     if (text.trim() !== '') {
-      sendMessage(text);
-      setText('');
+        sendMessage(text);
+        setText('');
     }
   };
 

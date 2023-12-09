@@ -16,6 +16,7 @@ const ChatRoom: React.FC = () => {
 
   useEffect(() => {
     socket.on('message', (message: Message) => {
+      console.log(message);
       setMessages((prevMessages) => [...prevMessages, message]);
     });
 
