@@ -1,4 +1,5 @@
 import styles from './header.module.scss';
+import React from "react"
 import Image from 'next/image';
 import ImageHandler from '@/app/_functions/imageHandler';
 import Link from 'next/link';
@@ -22,7 +23,7 @@ export default function Header() {
                     </Link>
                     </div>
                     <div className={styles.menu}>
-                        <Link href={"/"}>
+                        <Link href={"/account"}>
                             <Image className={styles.user}
                                 src={ImageHandler("User_ceeohs").toURL()} 
                                 alt="User icon" 
@@ -30,7 +31,7 @@ export default function Header() {
                                 width={41}>
                             </Image>
                         </Link>
-                        <Link href={"/"}>
+                        <Link href={"/chat"}>
                             <Image className={styles.chat}
                                 src={ImageHandler("Chat_Bubble_yk1mvt").toURL()} 
                                 alt="Chat icon" 

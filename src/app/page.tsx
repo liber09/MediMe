@@ -1,3 +1,4 @@
+import React from "react"
 import Image from 'next/image'
 import styles from './page.module.scss'
 import Search from './_components/search/search'

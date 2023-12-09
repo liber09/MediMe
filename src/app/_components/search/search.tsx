@@ -1,3 +1,4 @@
+import React from "react"
 import styles from './search.module.scss';
 import Image from 'next/image';
 import ImageHandler from '@/app/_functions/imageHandler';
