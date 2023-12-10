@@ -10,37 +10,55 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Chat{
-  id            Int      @id @default(autoincrement())
-  participants  User[]
-  startedAt     DateTime  @default(now())
-  endedAt       DateTime
-
+model Chat {
+  id           Int      @id @default(autoincrement())
+  participants User[]
+  startedAt    DateTime @default(now())
+  endedAt      DateTime
 }
 
-model ChatMessage{
-  id            Int      @id @default(autoincrement())
-  chatId        Int
-  message       String
+model ChatMessage {
+  id      Int    @id @default(autoincrement())
+  chatId  Int
+  message String
 }
 
 model User {
-  id            Int      @id @default(autoincrement())
-  email         String   @unique
-  firstName     String
-  lastName      String
-  address       String
-  postalCode    String
-  city          String
-  phoneNumber   String
-  createdAt     DateTime  @default(now())
-  UpdatedAt     createdAt
+  id          Int           @id @default(autoincrement())
+  email       String        @unique
+  firstName   String
+  lastName    String
+  address     String
+  postalCode  String
+  city        String
+  phoneNumber String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime
+  roleId      Int
+  Chat        Chat?         @relation(fields: [chatId], references: [id])
+  chatId      Int?
+  JournalPost JournalPost[]
 }
 
-model Role{
-  id          Int       @id @default(autoincrement())
-  roleName    String
-  createdAt   DateTime  @default(now())
-  UpdatedAt   createdAt
+model Role {
+  id        Int      @id @default(autoincrement())
+  roleName  String
+  createdAt DateTime @default(now())
+  UpdatedAt DateTime
+}
 
+model JournalInfo {
+  id        Int    @id @default(autoincrement())
+  ssn       String @unique
+  firstName String
+  lastName  String
+}
+
+model JournalPost {
+  id        Int      @id @default(autoincrement())
+  text      String
+  createdAt DateTime @default(now())
+  UpdatedAt DateTime
+  signedBy  User     @relation(fields: [userId], references: [id])
+  userId    Int
 }
