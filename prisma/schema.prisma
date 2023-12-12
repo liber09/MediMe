@@ -48,17 +48,20 @@ model Role {
 }
 
 model JournalInfo {
-  id        Int    @id @default(autoincrement())
-  ssn       String @unique
+  id        Int           @id @default(autoincrement())
+  ssn       String        @unique
   firstName String
   lastName  String
+  posts     JournalPost[]
 }
 
 model JournalPost {
-  id        Int      @id @default(autoincrement())
-  text      String
-  createdAt DateTime @default(now())
-  UpdatedAt DateTime
-  signedBy  User     @relation(fields: [userId], references: [id])
-  userId    Int
+  id            Int          @id @default(autoincrement())
+  text          String
+  createdAt     DateTime     @default(now())
+  UpdatedAt     DateTime
+  signedBy      User         @relation(fields: [userId], references: [id])
+  userId        Int
+  JournalInfo   JournalInfo? @relation(fields: [journalInfoId], references: [id])
+  journalInfoId Int?
 }
