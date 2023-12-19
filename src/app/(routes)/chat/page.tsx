@@ -3,10 +3,10 @@ import ChatRoom from "@/app/_components/chatRoom/ChatRoom";
 import styles from './page.module.scss'
 
 const Chat: React.FC = () => (
-    <div>
+    <section>
       <h1>Chatta med din vårdcentral här</h1>
       <ChatRoom />
-    </div>
+    </section>
 );
   
 export default Chat;

@@ -32,10 +32,10 @@ const ChatRoom: React.FC = () => {
   };
 
   return (
-    <div>
+    <section>
       <MessageList messages={messages} />
       <ChatInput sendMessage={sendMessage} />
-    </div>
+    </section>
   );
 };
 
