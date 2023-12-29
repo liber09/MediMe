@@ -32,7 +32,20 @@ export default function Home() {
           height={500} 
           width={500}>
         </Image>
-        
+      </section>
+      <section className={styles.violence}>
+        <Image className={styles.violenceImage}
+          src={ImageHandler("brottsutsatt_uskanr").toURL()} 
+          alt="En man och en kvinna som står med ansiktena mot varandra, mannen ser arg ut" 
+          height={3780} 
+          width={3780}>
+        </Image>
+        <h2 className={styles.violenceSectionTitle}>Är du utsatt för våld?</h2>
+        <p className={styles.violenceText}>Lever du i en våldsam relation?
+          Är du kanske själv den som utövar våld?</p>
+        <p className={styles.violenceText}>Ring</p>
+        <p className={styles.violenceText}><a href='https://kvinnofridslinjen.se/' target="_blank">Kvinnofridslinjen</a> - <a href='tel:004620505050'>020-50 50 50</a></p>
+        <p className={styles.violenceText}><a href='https://stodlinjenforman.se//' target="_blank">Stödlinjen för män</a> - <a href='tel:004620808080'>020-80 80 80</a></p>
       </section>
     </main>
   )
