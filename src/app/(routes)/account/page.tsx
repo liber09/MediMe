@@ -4,10 +4,10 @@ import { GetServerSideProps } from 'next';
 const Account = () => {
   return (
     <AuthenticatedComponent>
-      <div>
+      <section>
         <h1>Kontosida</h1>
         {/* Your content here */}
-      </div>
+      </section>
     </AuthenticatedComponent>
   );
 };

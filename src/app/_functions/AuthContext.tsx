@@ -22,7 +22,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const login = (userData: User) => {
     // Perform authentication logic and set the user state
-    setUser(userData);
+    setUser(userData);  
   };
 
   const logout = () => {
