@@ -1,5 +1,80 @@
+@import '/src/app/styles/variables.scss';
+
+@mixin ellieText {
+  position: absolute;
+  color: $white;
+  font-size: 24px;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+  font-family: 'Macondo Swash Caps';
+}
+
 .main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.emergency{
+  max-width: 100%;
+  height: auto;
+}
+
+.askEllie{
+  position: relative;
+}
+
+.ellieImage{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.askEllieTitle{
+  @include ellieText;
+  top: 10px; /* Adjust this value to set the distance from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 36px;
+  width: 100%;
+}
+
+.allergic{
+  @include ellieText;
+  top: calc(50% - 50px); 
+  left: calc(100% - 80px); 
+  transform: translateY(-50%);
+}
+
+.legPain{
+  @include ellieText;
+  top: calc(50% + 100px); 
+  left: calc(100% - 140px); // Adjusted to the right
+  transform: translateY(-50%);
+  text-wrap: nowrap;
+}
+
+.cold{
+  @include ellieText;
+  top: calc(50% - 30px); 
+  left: calc(50% - 180px); // Adjusted to the right
+  transform: translateY(-50%);
+  text-wrap: nowrap;
+}
+
+.covid{
+  @include ellieText;
+  top: calc(50% + 65px); 
+  left: calc(50% - 150px); // Adjusted to the right
+  transform: translateY(-50%);
+  text-wrap: nowrap;
+}
+
+.heartAsk{
+  position:absolute;
+  top: calc(50% + 20px); 
+  left: calc(100% - 150px); // Adjusted to the right
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
 }
