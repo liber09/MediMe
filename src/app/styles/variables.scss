@@ -1,5 +1,5 @@
 //IMPORTS
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Revalia&family=Macondo+Swash+Caps&family=Syne+Tactile&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Roboto&family=Revalia&family=Macondo+Swash+Caps&family=Syne+Tactile&display=swap');
 
 //BREAKPOINTS
 $bp-600: 600px;
@@ -20,5 +20,12 @@ $c-menuBackground: $red;
 //FONTS
 $f-MaShanZheng: 'Ma Shan Zheng';
 
+//MIXINS
+@mixin scalableImage{
+    max-width: 100%;
+    height: auto;
+}
+
 //OTHER
 $maxWidth: 1280px;
+

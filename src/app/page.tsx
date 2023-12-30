@@ -45,7 +45,26 @@ export default function Home() {
           Är du kanske själv den som utövar våld?</p>
         <p className={styles.violenceText}>Ring</p>
         <p className={styles.violenceText}><a href='https://kvinnofridslinjen.se/' target="_blank">Kvinnofridslinjen</a> - <a href='tel:004620505050'>020-50 50 50</a></p>
-        <p className={styles.violenceText}><a href='https://stodlinjenforman.se//' target="_blank">Stödlinjen för män</a> - <a href='tel:004620808080'>020-80 80 80</a></p>
+        <p className={styles.violenceText}><a href='https://stodlinjenforman.se/' target="_blank">Stödlinjen för män</a> - <a href='tel:004620808080'>020-80 80 80</a></p>
+      </section>
+      <section className={styles.findChatHealtCareCenter}>
+        <Image className={styles.healthCareCenterImage}
+          src={ImageHandler("vardcentral_vb3fon").toURL()} 
+          alt="En bild på en vårdcentralsbyggnad med snö på marken och träden utanför" 
+          height={781} 
+          width={1080}>
+        </Image>
+        <button className={styles.findAndChatButton}>Hitta & Chatta</button>
+      </section>
+      <p className ={styles.textUnderImage}>Hitta din vårdcentral, chatta direkt med dem, begär recept och boka tid</p>
+      <section className={styles.hopeless}>
+      <Image className={styles.hopelessImage}
+          src={ImageHandler("Hopeless_itexip").toURL()} 
+          alt="En bild bakifrån på en man som står på en hög klippa och blickar ut över havet. Himlen är mörk och vågorna skummar nedanför klippan. " 
+          height={3780} 
+          width={3780}>
+        </Image>
+        <p className ={styles.textUnderImage}>Har du självmordstankar? Eller är du anhörig till någon som du är rädd ska ta sitt liv? Kontakta <a href='https://mind.se/' target='_blank'>Mind självmordslinjen</a> på <a href='tel:90101'>90101</a></p>
       </section>
     </main>
   )
