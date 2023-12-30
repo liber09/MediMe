@@ -1,11 +1,10 @@
 @import '/src/app/styles/variables.scss';
 
 @mixin ellieText {
+  @include paragraphText;
   position: absolute;
   color: $white;
-  font-size: 24px;
   text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
-  font-family: 'Macondo Swash Caps';
 }
 
 .main {
@@ -29,11 +28,11 @@
 
 .askEllieTitle{
   @include ellieText;
+  @include headLineText;
   top: 10px; /* Adjust this value to set the distance from the top */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  font-size: 36px;
   width: 100%;
 }
 
@@ -82,7 +81,7 @@
   align-items: center;
   flex-direction: column;
   font-family: 'Macondo Swash Caps';
-  margin: 20px;
+  margin: $mg-xl;
 }
 
 .violenceImage{
@@ -91,14 +90,15 @@
   max-width: 80%;
   margin-top: 40px;
   border-radius: 90px;
+  margin: $mg-large;
 }
 
 .violenceSectionTitle{
-  font-size: 36px;
+  @include headLineText;
 }
 
 .violenceText{
-  font-size: 24px;
+  @include paragraphText;
   text-align: center;
 }
 
@@ -124,12 +124,49 @@
 }
 
 .textUnderImage{
-  text-align: center;
-  margin: 25px 40px;
-  font-size: 24px;
-  font-family: 'Roboto';
+  @include paragraphText;
+  margin: $mg-xxl $mg-huge;
 }
 
 .hopelessImage{
   @include scalableImage;
+}
+
+.tooMuch{
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 5px; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.leftColumn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.rightColumn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tooMuchImage{
+  height: auto;
+  width: auto;
+  max-width: 80%;
+  margin-top: $mg-medium;
+}
+
+.oneGlassTooMuch{
+  @include headLineText;
+  margin-bottom: $mg-small;
+}
+
+.notAlone{
+  @include paragraphText;
+  margin: $mg-medium $mg-small;
 }

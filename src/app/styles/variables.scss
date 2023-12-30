@@ -17,6 +17,14 @@ $black: #000000;
 $c-hover: $blue;
 $c-menuBackground: $red;
 
+//MARGINS
+$mg-huge: 40px;
+$mg-xxl: 25px;
+$mg-xl: 20px;
+$mg-large: 15px;
+$mg-medium: 10px;
+$mg-small: 5px;
+
 //FONTS
 $f-MaShanZheng: 'Ma Shan Zheng';
 
@@ -24,6 +32,17 @@ $f-MaShanZheng: 'Ma Shan Zheng';
 @mixin scalableImage{
     max-width: 100%;
     height: auto;
+}
+
+@mixin headLineText{
+    font-family: 'Macondo Swash Caps';
+    font-size: 36px;
+    text-align: center;
+}
+
+@mixin paragraphText{
+    font-family: 'Roboto';
+    font-size: 24px;
 }
 
 //OTHER

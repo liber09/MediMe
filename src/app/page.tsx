@@ -58,13 +58,33 @@ export default function Home() {
       </section>
       <p className ={styles.textUnderImage}>Hitta din vårdcentral, chatta direkt med dem, begär recept och boka tid</p>
       <section className={styles.hopeless}>
-      <Image className={styles.hopelessImage}
+        <Image className={styles.hopelessImage}
           src={ImageHandler("Hopeless_itexip").toURL()} 
           alt="En bild bakifrån på en man som står på en hög klippa och blickar ut över havet. Himlen är mörk och vågorna skummar nedanför klippan. " 
           height={3780} 
           width={3780}>
         </Image>
         <p className ={styles.textUnderImage}>Har du självmordstankar? Eller är du anhörig till någon som du är rädd ska ta sitt liv? Kontakta <a href='https://mind.se/' target='_blank'>Mind självmordslinjen</a> på <a href='tel:90101'>90101</a></p>
+      </section>
+      <section className={styles.tooMuch}>
+        <article className={styles.leftColumn}>
+          <Image className={styles.tooMuchImage}
+            src={ImageHandler("4_txasal").toURL()} 
+            alt="En kvinna sitter ensam vid ett bord och håller i ett vinglas. På bordet står ett andra vinglas. Kvinnan ser olycklig ut." 
+            height={1080} 
+            width={1080}>
+          </Image>
+          <p className={styles.notAlone}>Du är inte ensam, det finns hjälp att få när suget blir för stort</p>
+        </article>
+        <article className={styles.rightColumn}>
+          <p className={styles.oneGlassTooMuch}>Blir det ett glas för mycket?</p>
+          <Image className={styles.tooMuchImage}
+            src={ImageHandler("2_jjzg6f").toURL()} 
+            alt="En man sitter finklädd med ett tomt vinglas i handen. Mannen ser sorgsen ut." 
+            height={1080} 
+            width={1080}>
+          </Image>
+        </article>
       </section>
     </main>
   )
