@@ -1,10 +1,10 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
 import MessageList from '../messageList/MessageList';
 import ChatInput from '../chatInput/ChatInput';
+import io from 'socket.io-client';
 
-const socket = io('http://localhost:3001'); // Update with your server address
+const socket = io('http://localhost:3001');
 
 interface Message {
   text: string;
@@ -16,14 +16,14 @@ const ChatRoom: React.FC = () => {
 
   useEffect(() => {
     socket.on('message', (message: Message) => {
-      console.log(message);
+      console.log('Received message:', message);
       setMessages((prevMessages) => [...prevMessages, message]);
     });
 
     return () => {
       socket.disconnect();
     };
-  }, []);
+  }, [socket]);
 
   const sendMessage = (text: string) => {
     const message: Message = { text, timestamp: new Date().toISOString() };
