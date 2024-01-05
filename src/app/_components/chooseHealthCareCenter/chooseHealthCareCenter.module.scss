@@ -1,1 +1,7 @@
 @import '/src/app/styles/variables.scss';
+
+.dropDown{
+    @include paragraphText;
+    background-color: $light-gray;
+    padding: 1rem;
+}

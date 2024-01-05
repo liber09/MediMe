@@ -4,6 +4,7 @@ import ChatRoom from "@/app/_components/chatRoom/ChatRoom";
 import styles from './page.module.scss';
 import { healthcareProviderData } from '../../types/interfaces';
 import { getHealthCareProviderData } from "../api/healthcareProviders/getHealthCareProviders";
+import HealthcareProvidersDropdown from '../../_components/chooseHealthCareCenter/chooseHealthCareCenter';
 
 const Chat: React.FC = () => {
   const [hasActiveChat, setHasActiveChat] = useState<boolean>(false);
@@ -62,13 +63,16 @@ const Chat: React.FC = () => {
         <section>
           <h1 className={styles.pageTitle}>
             {hasActiveChat
-              ? "Chatta med din vårdcentral här"
-              : "No active chat available"}
+              ? "Chatta med din vårdcentral"
+              : "Chatta med din vårdcentral"}
           </h1>
-          {hasActiveChat && <ChatRoom />}
+          <section className={styles.chatContent}>
+            {!hasActiveChat && <HealthcareProvidersDropdown healthcareProviders={healthCareProviders?.healthcareProviders || []} />}
+            {hasActiveChat && <ChatRoom />}
+          </section>
         </section>
       )}
     </>
   );
-}
+};
 export default Chat;

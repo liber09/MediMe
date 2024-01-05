@@ -1,3 +1,4 @@
+import styles from './chooseHealthCareCenter.module.scss';
 import React, { useState, ChangeEvent } from 'react';
 import { HealthcareProvider } from '@/app/types/interfaces';
 
@@ -16,8 +17,8 @@ interface HealthcareProvidersDropdownProps {
   
     return (
       <div>
-        <label htmlFor="healthcareProvider">Select Healthcare Provider:</label>
-        <select id="healthcareProvider" onChange={handleProviderChange}>
+        <label htmlFor="healthcareProvider"></label>
+        <select className={styles.dropDown} id="healthcareProvider" onChange={handleProviderChange}>
           <option value="">Välj din vårdcentral...</option>
           {healthcareProviders.map((provider) => (
             <option key={provider.id} value={provider.id}>

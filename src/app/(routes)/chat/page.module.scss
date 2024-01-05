@@ -3,3 +3,9 @@
 .pageTitle{
     @include headLineText;
 }
+
+.chatContent{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
