@@ -7,12 +7,14 @@ interface HealthcareProvidersDropdownProps {
   }
 
   const HealthcareProvidersDropdown: React.FC<HealthcareProvidersDropdownProps> = ({ healthcareProviders }) => {
+    console.log('HealthcareProvidersDropdown - healthcareProviders (props):', healthcareProviders);
+
     const [selectedProvider, setSelectedProvider] = useState<HealthcareProvider | null>(null);
   
     const handleProviderChange = (event: ChangeEvent<HTMLSelectElement>) => {
       const selectedId = event.target.value;
       const provider = healthcareProviders.find((p) => p.id === selectedId) || null;
-      setSelectedProvider(provider);
+      setSelectedProvider(provider);      
     };
   
     return (
@@ -22,7 +24,7 @@ interface HealthcareProvidersDropdownProps {
           <option value="">Välj din vårdcentral...</option>
           {healthcareProviders.map((provider) => (
             <option key={provider.id} value={provider.id}>
-              {provider.name}
+              {provider.name + ", " + provider.city}
             </option>
           ))}
         </select>

@@ -15,8 +15,8 @@ export const getHealthCareProviderData = async (binId: string, apiKey: string): 
         'X-Access-Key': apiKey,
       },
     });
-    const healthcareProviders = response.data.record.healthcareProviders;
-    return healthcareProviders;
+
+    return response.data; // Return the entire response.data object
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error; // Rethrow the error for handling in the calling code

@@ -8,14 +8,14 @@ import HealthcareProvidersDropdown from '../../_components/chooseHealthCareCente
 
 const Chat: React.FC = () => {
   const [hasActiveChat, setHasActiveChat] = useState<boolean>(false);
-  const [healthCareProviders, sethealthCareProviders] = useState<healthcareProviderData | null>(null);
+  const [healthCareProviders, setHealthCareProviders] = useState<healthcareProviderData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const binId = process.env.NEXT_PUBLIC_HC_PROVIDERS_BIN_ID;
-        const apiKey = process.env.NEXT_PUBLIC_HC_PROVIDERS_API_KEY; 
+        const apiKey = process.env.NEXT_PUBLIC_HC_PROVIDERS_API_KEY;
     
         console.log('BIN ID:', binId);
         console.log('API Key:', apiKey);
@@ -26,12 +26,12 @@ const Chat: React.FC = () => {
         }
     
         const jsonData: healthcareProviderData = await getHealthCareProviderData(binId, apiKey);
-    
-        sethealthCareProviders(jsonData);
+        console.log("jsonData: ", jsonData)
+        setHealthCareProviders(jsonData.record);
+        setIsLoading(false); // Move setIsLoading inside the try block
       } catch (error) {
         console.error('Error fetching healthcare provider data:', error);
-      } finally {
-        setIsLoading(false);
+        setIsLoading(false); // Handle error by setting isLoading to false
       }
     };
     fetchData();
@@ -58,16 +58,19 @@ const Chat: React.FC = () => {
   return (
     <>
       {isLoading ? (
-        <p>Laddar...</p>
+        <section className={styles.loadingContainer}>
+          <p className={styles.loadText}>Laddar...</p>
+        </section>
       ) : (
-        <section>
+        <section key={JSON.stringify(healthCareProviders)}>
           <h1 className={styles.pageTitle}>
             {hasActiveChat
               ? "Chatta med din vårdcentral"
               : "Chatta med din vårdcentral"}
           </h1>
           <section className={styles.chatContent}>
-            {!hasActiveChat && <HealthcareProvidersDropdown healthcareProviders={healthCareProviders?.healthcareProviders || []} />}
+          {!hasActiveChat && (
+            <HealthcareProvidersDropdown healthcareProviders={healthCareProviders?.healthcareProviders || []} />)}
             {hasActiveChat && <ChatRoom />}
           </section>
         </section>

@@ -9,3 +9,14 @@
     align-items: center;
     justify-content: center;
 }
+.loadingContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.loadText{
+    @include headLineText;
+    margin-top: $mg-huge;
+    
+}
