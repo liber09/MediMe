@@ -30,13 +30,13 @@ interface HealthcareProvidersDropdownProps {
         </select>
   
         {selectedProvider && (
-          <div>
-            <h2>{selectedProvider.name}</h2>
+          <section className={styles.info}>
+            <h2 className={styles.healthcareProviderTitle}>{selectedProvider.name}</h2>
             <p>Ort: {selectedProvider.city}</p>
             <p>Adress: {selectedProvider.street}</p>
             <p>Postnr: {selectedProvider.postalCode}</p>
             <p>Telefon: {selectedProvider.phone}</p>
-          </div>
+          </section>
         )}
       </div>
     );
