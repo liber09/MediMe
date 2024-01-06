@@ -5,6 +5,7 @@ import styles from './page.module.scss';
 import { healthcareProviderData } from '../../types/interfaces';
 import { getHealthCareProviderData } from "../api/healthcareProviders/getHealthCareProviders";
 import HealthcareProvidersDropdown from '../../_components/chooseHealthCareCenter/chooseHealthCareCenter';
+import DynamicButton from '../../_components/dynamicButton/dynamicButton';
 
 const Chat: React.FC = () => {
   const [hasActiveChat, setHasActiveChat] = useState<boolean>(false);
@@ -71,6 +72,9 @@ const Chat: React.FC = () => {
           <section className={styles.chatContent}>
           {!hasActiveChat && (
             <HealthcareProvidersDropdown healthcareProviders={healthCareProviders?.healthcareProviders || []} />)}
+            <DynamicButton text="Starta chat" backgroundColor="#B0001E" onClick ={() => {
+
+            }} />
             {hasActiveChat && <ChatRoom />}
           </section>
         </section>
