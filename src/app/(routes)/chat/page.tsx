@@ -10,6 +10,7 @@ import DynamicButton from '../../_components/dynamicButton/dynamicButton';
 const Chat: React.FC = () => {
   const [hasActiveChat, setHasActiveChat] = useState<boolean>(false);
   const [healthCareProviders, setHealthCareProviders] = useState<healthcareProviderData | null>(null);
+  const [selectedHealthcareProvider, setSelectedHealthcareProvider] = useState<healthcareProviderData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -56,6 +57,12 @@ const Chat: React.FC = () => {
     checkActiveChat();
   }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
+  const startChat = () => {
+    // Add your logic to initiate the chat
+    // For now, setHasActiveChat to true and update selectedHealthcareProvider
+    setHasActiveChat(true);
+  };
+
   return (
     <>
       {isLoading ? (
@@ -66,16 +73,15 @@ const Chat: React.FC = () => {
         <section key={JSON.stringify(healthCareProviders)}>
           <h1 className={styles.pageTitle}>
             {hasActiveChat
-              ? "Chatta med din vårdcentral"
+              ? `Chat med ${selectedHealthcareProvider?.healthcareProviders || "din vårdcentral"}`
               : "Chatta med din vårdcentral"}
           </h1>
           <section className={styles.chatContent}>
-          {!hasActiveChat && (
-            <HealthcareProvidersDropdown healthcareProviders={healthCareProviders?.healthcareProviders || []} />)}
-            <DynamicButton text="Starta chat" backgroundColor="#B0001E" onClick ={() => {
-
-            }} />
-            {hasActiveChat && <ChatRoom />}
+            {!hasActiveChat && (
+              <HealthcareProvidersDropdown healthcareProviders={healthCareProviders?.healthcareProviders || []} setSelectedHealthcareProvider={setSelectedHealthcareProvider} />
+            )}
+            <DynamicButton text="Starta chat" backgroundColor="#B0001E" onClick={startChat} />
+            {hasActiveChat && selectedHealthcareProvider && <ChatRoom healthcareProvider={selectedHealthcareProvider} />}
           </section>
         </section>
       )}
