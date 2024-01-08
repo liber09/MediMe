@@ -1,8 +1,5 @@
-import React, { Component }  from "react"
+import React from "react"
 import Image from 'next/image'
-import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import styles from './page.module.scss'
 import Search from './_components/search/search'
 import ImageHandler from "./_functions/imageHandler"
