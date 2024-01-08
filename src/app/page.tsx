@@ -85,6 +85,10 @@ export default function Home() {
             width={1080}>
           </Image>
         </article>
+        <p className={styles.alcoholText}>Du kan kontakta alkohollinjen på telefon eller alkoholhjälpen som har öppet dygnet runt, dom ger stöd utifrån din situation och stödjer dig i din situation där och då</p>
+        <p className={styles.alcoholContact}>Kontakta</p>
+        <p className={styles.alcoholContact}><a href='https://www.alkohollinjen.se/' target="_blank">Alkohollinjen</a> - <a href='tel:004620844448'>020-84 44 48</a></p>
+        <p className={styles.alcoholContact}><a href='https://www.alkoholhjalpen.se/' target="_blank">Alkoholhjälpen</a></p>
       </section>
     </main>
   )
