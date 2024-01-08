@@ -1,5 +1,8 @@
-import React from "react"
+import React, { Component }  from "react"
 import Image from 'next/image'
+import ReactDOM from 'react-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import styles from './page.module.scss'
 import Search from './_components/search/search'
 import ImageHandler from "./_functions/imageHandler"
@@ -40,7 +43,7 @@ export default function Home() {
           height={3780} 
           width={3780}>
         </Image>
-        <h2 className={styles.violenceSectionTitle}>Är du utsatt för våld?</h2>
+        <h2 className={styles.sectionTitle}>Är du utsatt för våld?</h2>
         <p className={styles.violenceText}>Lever du i en våldsam relation?
           Är du kanske själv den som utövar våld?</p>
         <p className={styles.violenceText}>Ring</p>
@@ -77,7 +80,7 @@ export default function Home() {
           <p className={styles.notAlone}>Du är inte ensam, det finns hjälp att få när suget blir för stort</p>
         </article>
         <article className={styles.rightColumn}>
-          <p className={styles.oneGlassTooMuch}>Blir det ett glas för mycket?</p>
+          <h2 className={styles.oneGlassTooMuch}>Blir det ett glas för mycket?</h2>
           <Image className={styles.tooMuchImage}
             src={ImageHandler("2_jjzg6f").toURL()} 
             alt="En man sitter finklädd med ett tomt vinglas i handen. Mannen ser sorgsen ut." 
@@ -89,6 +92,9 @@ export default function Home() {
         <p className={styles.alcoholContact}>Kontakta</p>
         <p className={styles.alcoholContact}><a href='https://www.alkohollinjen.se/' target="_blank">Alkohollinjen</a> - <a href='tel:004620844448'>020-84 44 48</a></p>
         <p className={styles.alcoholContact}><a href='https://www.alkoholhjalpen.se/' target="_blank">Alkoholhjälpen</a></p>
+      </section>
+      <section className={styles.associationsContainer}>
+        <h2 className={styles.sectionTitle}>Föreningar</h2>
       </section>
     </main>
   )
